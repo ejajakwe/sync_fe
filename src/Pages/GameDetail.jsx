@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from "../components/ui/dialog";
+} from "../Components/ui/dialog";
 
 /** TODO: pindahkan ke env (VITE_API_BASE) */
 const API_BASE = "http://127.0.0.1:8000";

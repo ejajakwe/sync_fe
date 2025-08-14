@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/Components/ui/card";
 
 const API = "http://127.0.0.1:8000/api/admin";
 
