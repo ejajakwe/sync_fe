@@ -1,0 +1,12 @@
+[
+  {
+    "id": "hero1",
+    "type": "hero",
+    "image": "data:image/png;base64,..."
+  },
+  {
+    "id": "joki1",
+    "type": "joki",
+    "image": "data:image/png;base64,..."
+  }
+]

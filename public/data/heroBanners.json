@@ -1,0 +1,17 @@
+[
+  {
+    "id": "hero1",
+    "image": "/images/games/banner1.jpg",
+    "type": "hero"
+  },
+  {
+    "id": "hero2",
+    "image": "/images/games/banner2.jpg",
+    "type": "hero"
+  },
+  {
+    "id": "hero3",
+    "image": "/images/games/banner3.jpg",
+    "type": "hero"
+  }
+]

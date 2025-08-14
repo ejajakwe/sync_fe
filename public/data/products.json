@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ml",
+    "title": "Mobile Legends",
+    "publisher": "Moonton",
+    "type": "game",
+    "image": "/images/games/mlbb.png"
+  },
+  {
+    "id": "ff",
+    "title": "Free Fire",
+    "publisher": "Garena",
+    "type": "game",
+    "image": "/images/games/ff.png"
+  }
+]

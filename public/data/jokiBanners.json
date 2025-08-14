@@ -1,0 +1,17 @@
+[
+  {
+    "id": "joki1",
+    "image": "/images/levelings/joki.jpg",
+    "type": "joki"
+  },
+  {
+    "id": "joki2",
+    "image": "/images/levelings/joki2.jpg",
+    "type": "joki"
+  },
+  {
+    "id": "joki3",
+    "image": "/images/levelings/joki3.jpg",
+    "type": "joki"
+  }
+]
