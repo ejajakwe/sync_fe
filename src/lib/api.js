@@ -8,17 +8,17 @@ import axios from 'axios';
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 
-export default api;
+// export default api;
 
-export const getProducts = async () => {
-  const res = await api.get('/products');
-  return res.data.data;
-};
+// export const getProducts = async () => {
+//   const res = await api.get('/products');
+//   return res.data.data;
+// };
 
-export const addProduct = async (product) => {
-  const res = await api.post('/products', product);
-  return res.data.data;
-};
+// export const addProduct = async (product) => {
+//   const res = await api.post('/products', product);
+//   return res.data.data;
+// };
 
 //
 

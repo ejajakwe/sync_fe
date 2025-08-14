@@ -9,8 +9,8 @@ import { Input } from "@/Components/ui/input";
 import { Button } from "@/Components/ui/button";
 
 export default function LevelingDetailModal({ leveling, onClose, onSaveSuccess }) {
-
     const API_BASE = import.meta.env.VITE_API_BASE;
+    
     const [headerImageFile, setHeaderImageFile] = useState(null);
     const [fields, setFields] = useState(
         typeof leveling?.fields === "string" ? JSON.parse(leveling.fields) : leveling?.fields || []
