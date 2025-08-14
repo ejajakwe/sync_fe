@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { Button } from "@/Components/ui/button";
 
 export default function SyncDigiflazz() {
+    const API_BASE = import.meta.env.VITE_API_BASE;
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const fetchProducts = async () => {
         setLoading(true);
-        const res = await fetch("http://localhost:8000/api/admin/digiflazz-products", { credentials: "include" });
+        const res = await fetch(`${API_BASE}/api/admin/digiflazz-products`, { credentials: "include" });
         const data = await res.json();
         setProducts(data);
         setLoading(false);
@@ -15,7 +16,7 @@ export default function SyncDigiflazz() {
 
     const toggleActivation = async (product) => {
         const action = product.active ? "deactivate" : "activate";
-        await fetch(`http://localhost:8000/api/admin/nominals/${product.id}/${action}`, {
+        await fetch(`${API_BASE}/api/admin/nominals/${product.id}/${action}`, {
             method: "POST",
             credentials: "include"
         });
