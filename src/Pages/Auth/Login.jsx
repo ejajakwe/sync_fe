@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginAdmin } from "@/lib/auth";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://127.0.0.1:8000";
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 // ---- Helper: sanitasi & validasi ----
 const sanitizeEmail = (v) => {
@@ -169,9 +169,8 @@ export default function Login() {
           <button
             onClick={handleLogin}
             disabled={disabled}
-            className={`w-full py-2 rounded-md font-semibold transition-colors ${
-              disabled ? "bg-gray-600 cursor-not-allowed" : "bg-orange-500 hover:bg-orange-600"
-            }`}
+            className={`w-full py-2 rounded-md font-semibold transition-colors ${disabled ? "bg-gray-600 cursor-not-allowed" : "bg-orange-500 hover:bg-orange-600"
+              }`}
           >
             {blocked ? "Sementara Diblokir…" : submitting ? "Memproses…" : "Login"}
           </button>

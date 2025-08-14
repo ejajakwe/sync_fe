@@ -9,6 +9,8 @@ import { Input } from "@/Components/ui/input";
 import { Button } from "@/Components/ui/button";
 
 export default function LevelingDetailModal({ leveling, onClose, onSaveSuccess }) {
+
+    const API_BASE = import.meta.env.VITE_API_BASE;
     const [headerImageFile, setHeaderImageFile] = useState(null);
     const [fields, setFields] = useState(
         typeof leveling?.fields === "string" ? JSON.parse(leveling.fields) : leveling?.fields || []
@@ -80,7 +82,7 @@ export default function LevelingDetailModal({ leveling, onClose, onSaveSuccess }
                 }
             });
 
-            const res = await fetch(`http://127.0.0.1:8000/api/levelings/${leveling.id}`, {
+            const res = await fetch(`${API_BASE}/api/levelings/${leveling.id}`, {
                 method: "POST", // Tetap POST karena pakai FormData
                 body: fd,
             });

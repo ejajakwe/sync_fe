@@ -13,7 +13,7 @@ import {
 } from "../Components/ui/dialog";
 
 /** TODO: pindahkan ke env (VITE_API_BASE) */
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 /** Map slug/nama game → key validasi backend */
 function getValidationKey(slug = "", gameName = "") {

@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api',
-  withCredentials: true,
-});
+// const api = axios.create({
+//   baseURL: 'http://127.0.0.1:8000/api',
+//   withCredentials: true,
+// });
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 
 export default api;
 
@@ -22,13 +23,13 @@ export const addProduct = async (product) => {
 //
 
 export async function fetchGames() {
-  const res = await fetch("http://127.0.0.1:8000/api/games");
+  const res = await fetch(`${API_BASE}/api/games`);
   if (!res.ok) throw new Error("Gagal mengambil data");
   return res.json();
 }
 
 export async function createGame(game) {
-  const res = await fetch("http://127.0.0.1:8000/api/games", {
+  const res = await fetch(`${API_BASE}/api/games`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(game),
@@ -38,7 +39,7 @@ export async function createGame(game) {
 }
 
 export async function updateGame(id, game) {
-  const res = await fetch(`http://127.0.0.1:8000/api/games/${id}`, {
+  const res = await fetch(`${API_BASE}/api/games/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(game),
@@ -48,7 +49,7 @@ export async function updateGame(id, game) {
 }
 
 export async function deleteGame(id) {
-  const res = await fetch(`http://127.0.0.1:8000/api/games/${id}`, {
+  const res = await fetch(`${API_BASE}/api/games/${id}`, {
     method: "DELETE",
   });
   if (!res.ok) throw new Error("Gagal menghapus game");

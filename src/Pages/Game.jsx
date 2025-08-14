@@ -19,7 +19,7 @@ export default function Game() {
 
   useEffect(() => {
     // Fetch data dari API Laravel
-    fetch("${API_BASE}/api/games")
+    fetch(`${API_BASE}/api/games`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Gagal mengambil data game");

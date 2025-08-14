@@ -3,7 +3,8 @@ import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import { Card, CardHeader, CardTitle, CardContent } from "@/Components/ui/card";
 
-const API = "http://127.0.0.1:8000/api/admin";
+const API_BASE = import.meta.env.VITE_API_BASE;
+const API = `${API_BASE}/api/admin`;
 
 // helper untuk pilih field WA yang ada
 const pickWhatsapp = (r) =>

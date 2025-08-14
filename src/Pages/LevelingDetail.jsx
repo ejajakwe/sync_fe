@@ -7,6 +7,7 @@ import { Input } from "../Components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../Components/ui/dialog";
 
 export default function LevelingDetail() {
+  const API_BASE = import.meta.env.VITE_API_BASE;
   const { id } = useParams();
   const { slug } = useParams();
   const [leveling, setLeveling] = useState(null);
@@ -21,7 +22,7 @@ export default function LevelingDetail() {
   const [selectedPayment, setSelectedPayment] = useState(null);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/levelings/slug/${slug}`)
+    fetch(`${API_BASE}/api/levelings/slug/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         const parsedFields = typeof data.fields === "string" ? JSON.parse(data.fields) : data.fields;

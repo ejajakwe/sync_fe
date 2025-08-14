@@ -9,6 +9,7 @@ import { Input } from "@/Components/ui/input";
 import { Button } from "@/Components/ui/button";
 
 export default function GameDetailModal({ game, onClose, onSaveSuccess }) {
+  const API_BASE = import.meta.env.VITE_API_BASE;
   const [headerImageFile, setHeaderImageFile] = useState(null);
   const [fields, setFields] = useState(
     typeof game?.fields === "string" ? JSON.parse(game.fields) : game?.fields || []
@@ -37,7 +38,7 @@ export default function GameDetailModal({ game, onClose, onSaveSuccess }) {
   const addNominal = () =>
     setNominals([
       ...nominals,
-      { label: "", price: "", sku_code: ""},
+      { label: "", price: "", sku_code: "" },
     ]);
   const removeNominal = (i) => setNominals(nominals.filter((_, idx) => idx !== i));
   const updateNominal = (i, key, val) => {
@@ -81,7 +82,7 @@ export default function GameDetailModal({ game, onClose, onSaveSuccess }) {
         fd.append("header_image", headerImageFile);
       }
 
-      const res = await fetch(`http://127.0.0.1:8000/api/games/${game.id}`, {
+      const res = await fetch(`${API_BASE}/api/games/${game.id}`, {
         method: "POST",
         body: fd,
       });

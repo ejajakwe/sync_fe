@@ -17,6 +17,7 @@ import {
 
 export default function Kelola() {
   // Game state
+  const API_BASE = import.meta.env.VITE_API_BASE;
   const [games, setGames] = useState([]);
   const [editingGame, setEditingGame] = useState(null);
   const [gameModalOpen, setGameModalOpen] = useState(false);
@@ -44,17 +45,17 @@ export default function Kelola() {
 
   // Fetch data
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/games")
+    fetch(`${API_BASE}/api/games`)
       .then((res) => res.json())
       .then(setGames)
       .catch((err) => console.error("Gagal fetch games", err));
 
-    fetch("http://127.0.0.1:8000/api/levelings")
+    fetch(`${API_BASE}/api/levelings`)
       .then((res) => res.json())
       .then(setLevelings)
       .catch((err) => console.error("Gagal fetch levelings", err));
 
-    fetch("http://127.0.0.1:8000/api/banners")
+    fetch(`${API_BASE}/api/banners`)
       .then((res) => res.json())
       .then(setBanners)
       .catch((err) => console.error("Gagal fetch banners", err));
@@ -65,8 +66,8 @@ export default function Kelola() {
     try {
       const isEdit = formData.get("_method") === "PUT";
       const url = isEdit
-        ? `http://127.0.0.1:8000/api/games/${formData.get("id")}`
-        : "http://127.0.0.1:8000/api/games";
+        ? `${API_BASE}/api/games/${formData.get("id")}`
+        : `${API_BASE}/api/games`;
 
       const res = await fetch(url, {
         method: "POST",
@@ -85,7 +86,7 @@ export default function Kelola() {
   const handleDeleteGame = async (id) => {
     if (!confirm("Yakin hapus game ini?")) return;
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/games/${id}`, {
+      const res = await fetch(`${API_BASE}/api/games/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Gagal hapus game");
@@ -99,7 +100,7 @@ export default function Kelola() {
     if (!confirm("Sinkronisasi akan menimpa data nominal berdasarkan Digiflazz. Lanjutkan?")) return;
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/admin/sync-products", {
+      const res = await fetch(`${API_BASE}/api/admin/sync-products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -127,8 +128,8 @@ export default function Kelola() {
     try {
       const isEdit = formData.get("_method") === "PUT";
       const url = isEdit
-        ? `http://127.0.0.1:8000/api/levelings/${formData.get("id")}`
-        : "http://127.0.0.1:8000/api/levelings";
+        ? `${API_BASE}/api/levelings/${formData.get("id")}`
+        : `${API_BASE}/api/levelings`;
 
       const res = await fetch(url, {
         method: "POST",
@@ -147,7 +148,7 @@ export default function Kelola() {
   const handleDeleteLeveling = async (id) => {
     if (!confirm("Yakin hapus leveling ini?")) return;
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/levelings/${id}`, {
+      const res = await fetch(`${API_BASE}/api/levelings/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Gagal hapus leveling");
@@ -159,7 +160,7 @@ export default function Kelola() {
 
   // === Banner ===
   const handleUploadBanner = async (fd) => {
-    const res = await fetch("http://127.0.0.1:8000/api/banners", {
+    const res = await fetch(`${API_BASE}/api/banners`, {
       method: "POST",
       body: fd,
     });
@@ -175,7 +176,7 @@ export default function Kelola() {
 
   const handleDeleteBanner = async (id) => {
     if (!confirm("Yakin hapus banner ini?")) return;
-    await fetch(`http://127.0.0.1:8000/api/banners/${id}`, { method: "DELETE" });
+    await fetch(`${API_BASE}/api/banners/${id}`, { method: "DELETE" });
     setBanners(banners.filter((b) => b.id !== id));
   };
 

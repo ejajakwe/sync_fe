@@ -4,10 +4,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function JokiCarousel() {
   const [banners, setBanners] = useState([]);
   const [current, setCurrent] = useState(0);
-
+  const API_BASE = import.meta.env.VITE_API_BASE;
   // Ambil banner dari API Laravel
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/banners")
+    fetch(`${API_BASE}/api/banners`)
       .then((res) => res.json())
       .then((data) => {
         const heroBanners = data.filter((b) => b.type === "joki");

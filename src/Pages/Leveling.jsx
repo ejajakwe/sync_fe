@@ -13,11 +13,12 @@ import {
 } from "@/Components/ui/card";
 
 export default function Leveling() {
+  const API_BASE = import.meta.env.VITE_API_BASE;
   const [levelings, setLevelings] = useState([]);
 
   useEffect(() => {
     // Fetch data dari API Laravel
-    fetch("http://127.0.0.1:8000/api/levelings")
+    fetch(`${API_BASE}/api/levelings`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Gagal mengambil data leveling");
