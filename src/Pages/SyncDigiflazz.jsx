@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/Components/ui/button";
 
 export default function SyncDigiflazz() {
     const [products, setProducts] = useState([]);

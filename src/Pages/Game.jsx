@@ -10,7 +10,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle
-} from "@/components/ui/card";
+} from "@/Components/ui/card";
 
 export default function Game() {
   const [games, setGames] = useState([]);

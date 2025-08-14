@@ -4,9 +4,9 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+} from "@/Components/ui/dialog";
+import { Input } from "@/Components/ui/input";
+import { Button } from "@/Components/ui/button";
 
 export default function GameDetailModal({ game, onClose, onSaveSuccess }) {
   const [headerImageFile, setHeaderImageFile] = useState(null);

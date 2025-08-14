@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../components/ui/dialog";
+import { Button } from "../Components/ui/button";
+import { Input } from "../Components/ui/input";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../Components/ui/dialog";
 
 export default function LevelingDetail() {
   const { id } = useParams();

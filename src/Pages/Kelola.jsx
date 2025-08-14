@@ -6,7 +6,7 @@ import GameDetailModal from "@/Components/GameDetailModal";
 import LevelingFormModal from "@/Components/LevelingFormModal";
 import LevelingDetailModal from "@/Components/LevelingDetailModal";
 import BannerFormModal from "@/Components/BannerFormModal";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/Components/ui/button";
 import {
   Card,
   CardContent,

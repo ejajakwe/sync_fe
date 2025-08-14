@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input";
+import { Input } from "@/Components/ui/input";
 import { LogIn, LogOut, Search, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { isAdminLoggedIn, logoutAdmin } from "@/lib/auth";

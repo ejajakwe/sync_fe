@@ -2,8 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
+import { Button } from "../Components/ui/button";
+import { Input } from "../Components/ui/input";
 import {
   Dialog,
   DialogContent,

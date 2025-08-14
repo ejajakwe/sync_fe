@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/Components/ui/input";
+import { Button } from "@/Components/ui/button";
 
 export default function LevelingFormModal({ onSubmit, onClose, initialData }) {
   const [title, setTitle] = useState("");
