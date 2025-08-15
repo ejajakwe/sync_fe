@@ -57,11 +57,18 @@ export async function deleteGame(id) {
 }
 
 export async function getJSON(path, params = {}) {
-  const url = new URL(API_BASE + path);
-  Object.entries(params).forEach(([k, v]) => {
-    if (v !== undefined && v !== null) url.searchParams.set(k, v);
+  // pastikan selalu ke BACKEND + /api/...
+  const needsApiPrefix = !path.startsWith('/api');
+  const full = path.startsWith('http')
+    ? path
+    : `${API_BASE}${needsApiPrefix ? '/api' : ''}${path}`;
+
+  const url = new URL(full);
+  Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
+
+  const res = await fetch(url.toString(), {
+    headers: { Accept: 'application/json' },
   });
-  const res = await fetch(url, { headers: { "Accept": "application/json" } });
-  if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
